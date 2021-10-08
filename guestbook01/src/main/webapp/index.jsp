@@ -1,5 +1,19 @@
+<%@page import="guestbook01.vo.GuestbookVo"%>
+<%@page import="java.util.List"%>
+<%@page import="guestbook01.dao.GuestbookDao"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+    	request.setCharacterEncoding("utf-8");
+    
+		
+    	String name = request.getParameter("name");
+    	String message = request.getParameter("message");
+    	String regDate = request.getParameter("regDate");
+    	
+    	List<GuestbookVo> list = new GuestbookDao().findAll();
+    	int num=0;
+    %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,17 +34,28 @@
 		</tr>
 	</table>
 	</form>
+	
+	<%
+		for(GuestbookVo vo : list){
+			num = num+1;
+			
+	%>
 	<br>
 	<table width=510 border=1>
 		<tr>
-			<td>[1]</td>
-			<td>안대혁</td>
-			<td>2013-01-15</td>
-			<td><a href="deleteform.jsp">삭제</a></td>
+			<td>[<%=num %>]</td>
+			<td><%=vo.getName() %></td>
+			<td><%=vo.getRegDate()%></td>
+			<td><a href="deleteform.jsp?no=<%=vo.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
-			<td colspan=4>안녕하세요</td>
+			<td colspan=4><%=vo.getMessage() %></td>
 		</tr>
 	</table>
+	<%
+		
+		}
+	%>
+	
 </body>
 </html>
