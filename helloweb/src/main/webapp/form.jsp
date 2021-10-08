@@ -30,6 +30,11 @@
 		물기 <input type="checkbox" name="hobby" value="biting" />
 		수영 <input type="checkbox" name="hobby" value="swimming" />
 		<br/><br/>
+		
+		 자기소개:<br/>
+		 <textarea name="profile"></textarea>
+		 
+		 <br/><br/>
 		<input type="submit" value="회원가입"/>
 	</form>
 </body>
