@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	request.setCharacterEncoding("utf-8");
-	Long no = Long.parseLong(request.getParameter("no"));
-	
+	Long no = (Long)request.getAttribute("no");
 %>
 <html>
 <head>
@@ -16,6 +14,6 @@
 	<input type="submit" value="확인" />
 	</form>
 	<br>
-	<a href="/guestbook01">메인으로 돌아가기</a>
+	<a href="/guestbook02/gb">메인으로 돌아가기</a>
 </body>
 </html>
