@@ -27,8 +27,7 @@
     <url-pattern>/cookie</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>LifeCycleServlet</display-name>
+    
     <servlet-name>LifeCycleServlet</servlet-name>
     <servlet-class>helloweb.LifeCycleServlet</servlet-class>
   </servlet>
